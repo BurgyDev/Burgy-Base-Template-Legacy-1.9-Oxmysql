@@ -227,18 +227,6 @@ ALTER TABLE `addon_inventory_items`
   ADD KEY `index_addon_inventory_inventory_name` (`inventory_name`);
 
 --
--- Index pour la table `baninfo`
---
-ALTER TABLE `baninfo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `banlist`
---
-ALTER TABLE `banlist`
-  ADD PRIMARY KEY (`license`);
-
---
 -- Index pour la table `banlisthistory`
 --
 ALTER TABLE `banlisthistory`
@@ -289,18 +277,6 @@ ALTER TABLE `job_grades`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `kc_jails`
---
-ALTER TABLE `kc_jails`
-  ADD PRIMARY KEY (`id`) USING BTREE;
-
---
--- Index pour la table `kc_warns`
---
-ALTER TABLE `kc_warns`
-  ADD PRIMARY KEY (`id`) USING BTREE;
-
---
 -- Index pour la table `licenses`
 --
 ALTER TABLE `licenses`
@@ -313,62 +289,10 @@ ALTER TABLE `open_car`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `owned_vehicles`
---
-ALTER TABLE `owned_vehicles`
-  ADD PRIMARY KEY (`plate`);
-
---
--- Index pour la table `phone_app_chat`
---
-ALTER TABLE `phone_app_chat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phone_calls`
---
-ALTER TABLE `phone_calls`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phone_messages`
---
-ALTER TABLE `phone_messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phone_users_contacts`
---
-ALTER TABLE `phone_users_contacts`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `society_moneywash`
 --
 ALTER TABLE `society_moneywash`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `twitter_accounts`
---
-ALTER TABLE `twitter_accounts`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
-
---
--- Index pour la table `twitter_likes`
---
-ALTER TABLE `twitter_likes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_twitter_likes_twitter_accounts` (`authorId`),
-  ADD KEY `FK_twitter_likes_twitter_tweets` (`tweetId`);
-
---
--- Index pour la table `twitter_tweets`
---
-ALTER TABLE `twitter_tweets`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_twitter_tweets_twitter_accounts` (`authorId`);
 
 --
 -- Index pour la table `users`
@@ -384,24 +308,6 @@ ALTER TABLE `user_licenses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `vehicles`
---
-ALTER TABLE `vehicles`
-  ADD PRIMARY KEY (`model`);
-
---
--- Index pour la table `vehicle_categories`
---
-ALTER TABLE `vehicle_categories`
-  ADD PRIMARY KEY (`name`);
-
---
--- Index pour la table `vehicle_sold`
---
-ALTER TABLE `vehicle_sold`
-  ADD PRIMARY KEY (`plate`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -415,18 +321,6 @@ ALTER TABLE `addon_account_data`
 -- AUTO_INCREMENT pour la table `addon_inventory_items`
 --
 ALTER TABLE `addon_inventory_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `baninfo`
---
-ALTER TABLE `baninfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `banlisthistory`
---
-ALTER TABLE `banlisthistory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -454,18 +348,6 @@ ALTER TABLE `job_grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
--- AUTO_INCREMENT pour la table `kc_jails`
---
-ALTER TABLE `kc_jails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `kc_warns`
---
-ALTER TABLE `kc_warns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT pour la table `licenses`
 --
 ALTER TABLE `licenses`
@@ -477,53 +359,12 @@ ALTER TABLE `licenses`
 ALTER TABLE `open_car`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
---
--- AUTO_INCREMENT pour la table `phone_app_chat`
---
-ALTER TABLE `phone_app_chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
---
--- AUTO_INCREMENT pour la table `phone_calls`
---
-ALTER TABLE `phone_calls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
-
---
--- AUTO_INCREMENT pour la table `phone_messages`
---
-ALTER TABLE `phone_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
-
---
--- AUTO_INCREMENT pour la table `phone_users_contacts`
---
-ALTER TABLE `phone_users_contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT pour la table `society_moneywash`
 --
 ALTER TABLE `society_moneywash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT pour la table `twitter_accounts`
---
-ALTER TABLE `twitter_accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT pour la table `twitter_likes`
---
-ALTER TABLE `twitter_likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
-
---
--- AUTO_INCREMENT pour la table `twitter_tweets`
---
-ALTER TABLE `twitter_tweets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -537,24 +378,3 @@ ALTER TABLE `users`
 ALTER TABLE `user_licenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `twitter_likes`
---
-ALTER TABLE `twitter_likes`
-  ADD CONSTRAINT `FK_twitter_likes_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`),
-  ADD CONSTRAINT `FK_twitter_likes_twitter_tweets` FOREIGN KEY (`tweetId`) REFERENCES `twitter_tweets` (`id`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `twitter_tweets`
---
-ALTER TABLE `twitter_tweets`
-  ADD CONSTRAINT `FK_twitter_tweets_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
