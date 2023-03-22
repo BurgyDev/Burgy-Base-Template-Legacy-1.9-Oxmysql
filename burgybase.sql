@@ -828,15 +828,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `job2`, `job2_grade`, `loadout`, `crafting_level`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `id`, `disabled`, `last_property`, `created_at`, `last_seen`, `hotbar`) VALUES
-('cc43e18c6e9a138e285c9ee63c7b318fb8cdaba5', '{\"money\":-700,\"bank\":51100,\"black_money\":0}', 'admin', '[]', 'police', 2, 'unemployed', 0, '[]', 0, '{\"y\":3052.575927734375,\"z\":47.24169921875,\"heading\":249.44882202148438,\"x\":2023.2923583984376}', 'Sonny', 'Burgy', '05/07/2933', 'm', 195, '{\"complexion_1\":0,\"sex\":0,\"face_md_weight\":50,\"eyebrows_2\":0,\"chin_1\":0,\"ears_2\":0,\"beard_4\":0,\"nose_1\":0,\"eyebrows_6\":0,\"nose_3\":0,\"sun_1\":0,\"bracelets_1\":-1,\"age_2\":0,\"chest_3\":0,\"eyebrows_1\":0,\"bracelets_2\":0,\"bodyb_3\":-1,\"nose_4\":0,\"watches_1\":-1,\"beard_2\":0,\"lipstick_2\":0,\"blush_2\":0,\"bodyb_1\":-1,\"helmet_1\":-1,\"eyebrows_5\":0,\"eye_color\":0,\"chest_1\":0,\"jaw_2\":0,\"mask_1\":0,\"bproof_1\":0,\"moles_2\":0,\"makeup_4\":0,\"skin_md_weight\":50,\"bodyb_4\":0,\"pants_1\":13,\"cheeks_3\":0,\"glasses_1\":0,\"blush_3\":0,\"lipstick_1\":0,\"complexion_2\":0,\"hair_color_2\":0,\"nose_2\":0,\"makeup_3\":0,\"decals_2\":0,\"nose_6\":0,\"shoes_1\":10,\"bags_1\":0,\"blush_1\":0,\"mom\":21,\"beard_1\":0,\"mask_2\":0,\"beard_3\":0,\"blemishes_1\":0,\"torso_1\":12,\"bproof_2\":0,\"lipstick_4\":0,\"hair_2\":0,\"dad\":0,\"nose_5\":0,\"makeup_2\":0,\"chin_4\":0,\"hair_color_1\":0,\"pants_2\":0,\"bags_2\":0,\"lipstick_3\":0,\"lip_thickness\":0,\"blemishes_2\":0,\"bodyb_2\":0,\"makeup_1\":0,\"cheeks_2\":0,\"chain_2\":0,\"hair_1\":0,\"helmet_2\":0,\"neck_thickness\":0,\"arms\":4,\"arms_2\":0,\"cheeks_1\":0,\"tshirt_2\":0,\"eye_squint\":0,\"sun_2\":0,\"eyebrows_4\":0,\"glasses_2\":0,\"age_1\":0,\"tshirt_1\":15,\"moles_1\":0,\"eyebrows_3\":0,\"watches_2\":0,\"decals_1\":0,\"torso_2\":0,\"chin_3\":0,\"shoes_2\":0,\"chin_2\":0,\"ears_1\":-1,\"chest_2\":0,\"chain_1\":0,\"jaw_1\":0}', '[{\"percent\":42.85,\"name\":\"hunger\",\"val\":428500},{\"percent\":57.13749999999999,\"name\":\"thirst\",\"val\":571375}]', 0, 4, 0, NULL, '2023-03-05 20:25:45', '2023-03-20 18:51:27', NULL);
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `user_licenses`
 --
 
