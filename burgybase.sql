@@ -810,7 +810,6 @@ CREATE TABLE `users` (
   `job2` varchar(20) NOT NULL DEFAULT 'unemployed',
   `job2_grade` int(11) NOT NULL DEFAULT 0,
   `loadout` longtext DEFAULT NULL,
-  `crafting_level` int(11) NOT NULL DEFAULT 0,
   `position` varchar(255) DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
   `firstname` varchar(16) DEFAULT NULL,
   `lastname` varchar(16) DEFAULT NULL,
